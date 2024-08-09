@@ -4,12 +4,14 @@ body {
     padding: 0;
     background-color: #f4f4f4;
 }
+
 .div-header {
     background-color: #333;
     color: white;
     padding: 20px 0;
     text-align: center;
 }
+
 .div-home {
     max-width: 800px;
     margin: 20px auto;
@@ -17,17 +19,23 @@ body {
     background-color: rgb(68, 7, 92);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-h1, h2, h3 {
+
+h1,
+h2,
+h3 {
     color: yellow;
 }
+
 p {
     color: white;
     line-height: 1.6;
 }
+
 ul {
     list-style: none;
     padding: 0;
 }
+
 ul li {
     background: rgb(68, 7, 92);
     margin: 5px 0;
@@ -35,12 +43,14 @@ ul li {
     border-left: 5px solid #333;
     font-weight: bold;
 }
+
 img {
     max-width: 100%;
     height: auto;
     display: block;
     margin: 20px 0;
 }
+
 .profile-image {
     display: block;
     margin: 20px auto;
@@ -50,22 +60,40 @@ img {
     object-fit: cover;
 }
 
+/* Flexbox for social buttons */
 .social-buttons {
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     margin-top: 20px;
 }
 
 .social-buttons a {
+    display: block;
     text-decoration: none;
     color: white;
-    margin: 0 10px;
+    margin: 10px;
     padding: 10px 20px;
     border-radius: 5px;
+    flex: 1 1 45%;
+    text-align: center;
 }
-.social-buttons .instagram { background: #E1306C; }
-.social-buttons .whatsapp { background: #25D366; }
-.social-buttons .linkedin { background: #0077B5; }
-.social-buttons .email { background: #BB001B; }
+
+.social-buttons .instagram {
+    background: #E1306C;
+}
+
+.social-buttons .whatsapp {
+    background: #25D366;
+}
+
+.social-buttons .linkedin {
+    background: #0077B5;
+}
+
+.social-buttons .email {
+    background: #BB001B;
+}
 
 .div-footer {
     background-color: #333;
@@ -74,6 +102,7 @@ img {
     text-align: center;
     margin-top: 20px;
 }
+
 .footer-content {
     display: inline-block;
     padding: 10px 20px;
@@ -94,13 +123,34 @@ img {
 }
 
 .social-buttons a:hover {
-    transform: scale(1.1); /* Aumenta o tamanho */
-    filter: brightness(1.2); /* Clareia a cor */
+    transform: scale(1.1);
+    /* Aumenta o tamanho */
+    filter: brightness(1.2);
+    /* Clareia a cor */
     transition: all 0.6s ease;
 }
 
 .footer-content .github-button:hover {
-    transform: scale(1.1);  /* Aumenta o tamanho */
-    background-color: #007BFF; /* Azul */
-    color: white;  /* Texto branco */
+    transform: scale(1.1);
+    /* Aumenta o tamanho */
+    background-color: #007BFF;
+    /* Azul */
+    color: white;
+    /* Texto branco */
+}
+
+@media (max-width: 600px) {
+    .social-buttons {
+        flex-direction: column;
+        /* Empilha os botões verticalmente em telas menores */
+    }
+
+    .social-buttons a {
+        width: 100%;
+        /* Faz com que os botões ocupem a largura total */
+        margin: 10px 0;
+        /* Adiciona espaço entre os botões */
+        text-align: center;
+        /* Centraliza o texto no botão */
+    }
 }
